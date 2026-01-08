@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gatefolded — Coming Soon</title>
+    <meta
+      name="description"
+      content="Gatefold lets you share music releases with artwork, credits, liner notes, and audio—in one clean listening page."
+    />
+    <meta name="robots" content="index,follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Gatefolded — Coming Soon" />
+    <meta
+      property="og:description"
+      content="Gatefold lets you share music releases with artwork, credits, liner notes, and audio—in one clean listening page."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gatefolded.com/" />
+
+    <style>
+      :root {
+        --bg: #0b0c0f;
+        --card: rgba(255, 255, 255, 0.06);
+        --border: rgba(255, 255, 255, 0.12);
+        --text: rgba(255, 255, 255, 0.92);
+        --muted: rgba(255, 255, 255, 0.68);
+        --accent: rgba(255, 255, 255, 0.92);
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
+          "Segoe UI Emoji";
+        background: radial-gradient(1200px 600px at 50% 10%, rgba(255,255,255,0.08), transparent 60%),
+          radial-gradient(900px 500px at 10% 90%, rgba(255,255,255,0.05), transparent 55%),
+          var(--bg);
+        color: var(--text);
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+
+      .wrap {
+        width: 100%;
+        max-width: 880px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 28px;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(10px);
+      }
+
+      .brand {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 18px;
+      }
+
+      .logo {
+        font-weight: 800;
+        letter-spacing: 0.2px;
+        font-size: 22px;
+      }
+
+      .badge {
+        font-size: 12px;
+        color: var(--muted);
+        border: 1px solid var(--border);
+        padding: 6px 10px;
+        border-radius: 999px;
+      }
+
+      h1 {
+        font-size: clamp(34px, 5vw, 54px);
+        line-height: 1.05;
+        margin: 8px 0 14px;
+        letter-spacing: -0.6px;
+      }
+
+      p {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.6;
+        max-width: 70ch;
+      }
+
+      .bullets {
+        margin: 14px 0 22px;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 10px;
+      }
+
+      .bullets li {
+        display: flex;
+        gap: 10px;
+        color: rgba(255,255,255,0.78);
+        line-height: 1.45;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        margin-top: 6px;
+        flex: 0 0 auto;
+      }
+
+      .form {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      input[type="email"] {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: rgba(0,0,0,0.25);
+        color: var(--text);
+        font-size: 15px;
+        outline: none;
+      }
+
+      input[type="email"]::placeholder { color: rgba(255,255,255,0.45); }
+
+      button {
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: rgba(255,255,255,0.14);
+        color: var(--accent);
+        font-weight: 600;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      button:hover { background: rgba(255,255,255,0.18); }
+
+      .fineprint {
+        margin-top: 10px;
+        font-size: 12px;
+        color: rgba(255,255,255,0.55);
+      }
+
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+        color: rgba(255,255,255,0.55);
+        font-size: 12px;
+      }
+
+      a { color: rgba(255,255,255,0.8); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      @media (max-width: 560px) {
+        .card { padding: 20px; }
+        .form { grid-template-columns: 1fr; }
+        button { width: 100%; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <div class="brand">
+          <div class="logo">Gatefolded</div>
+          <div class="badge">Coming soon</div>
+        </div>
+
+        <h1>A better way to share a release.</h1>
+
+        <p>
+          Gatefold lets you send one link where someone can see the cover art, tracklist, credits, liner notes, and hear the music.
+          Built for private sharing (press, collaborators) and public sharing (fans).
+        </p>
+
+        <ul class="bullets">
+          <li><span class="dot"></span><span>One clean listening page per release</span></li>
+          <li><span class="dot"></span><span>Artwork, tracklist, lyrics, credits, and notes in one place</span></li>
+          <li><span class="dot"></span><span>Optional downloads, with simple share links</span></li>
+        </ul>
+
+        <!-- Email capture (optional) -->
+        <!-- 1) Create a Formspree form and replace the action URL below.
+             2) Or remove this whole form block if you don't want email collection yet. -->
+        <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <input type="email" name="email" placeholder="Email for launch updates" required />
+          <button type="submit">Notify me</button>
+        </form>
+        <div class="fineprint">No spam. Just launch updates.</div>
+
+        <div class="footer">
+          <div>© <span id="y"></span> Gatefolded</div>
+          <div>
+            <a href="mailto:hello@gatefolded.com">hello@gatefolded.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
