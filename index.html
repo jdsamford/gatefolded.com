@@ -15,12 +15,15 @@
 
     <style>
       :root {
-        --bg: #0b0c0f;
-        --text: rgba(255, 255, 255, 0.92);
-        --muted: rgba(255, 255, 255, 0.68);
-        --border: rgba(255, 255, 255, 0.14);
+        --bg: #f6f6f6;
+        --card: rgba(255, 255, 255, 0.92);
+        --text: rgba(0, 0, 0, 0.88);
+        --muted: rgba(0, 0, 0, 0.6);
+        --border: rgba(0, 0, 0, 0.12);
       }
+
       * { box-sizing: border-box; }
+
       body {
         margin: 0;
         min-height: 100svh;
@@ -31,16 +34,20 @@
         background: var(--bg);
         color: var(--text);
       }
+
       .wrap {
         width: 100%;
-        max-width: 720px;
+        max-width: 760px;
       }
+
       .card {
         border: 1px solid var(--border);
         border-radius: 18px;
         padding: 28px;
-        background: rgba(255, 255, 255, 0.03);
+        background: var(--card);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.06);
       }
+
       .top {
         display: flex;
         align-items: baseline;
@@ -49,24 +56,29 @@
         margin-bottom: 18px;
         flex-wrap: wrap;
       }
+
       .brand {
         font-weight: 800;
         letter-spacing: 0.2px;
         font-size: 20px;
       }
+
       .tag {
         font-size: 12px;
         color: var(--muted);
         border: 1px solid var(--border);
         padding: 6px 10px;
         border-radius: 999px;
+        background: rgba(255,255,255,0.7);
       }
+
       h1 {
-        font-size: clamp(32px, 5vw, 48px);
-        line-height: 1.05;
+        font-size: clamp(30px, 4.5vw, 44px);
+        line-height: 1.08;
         margin: 0 0 14px;
-        letter-spacing: -0.5px;
+        letter-spacing: -0.4px;
       }
+
       p {
         margin: 0;
         color: var(--muted);
@@ -75,92 +87,72 @@
       }
 
       .mock {
-        margin-top: 26px;
+        margin-top: 22px;
       }
+
       .mock-card {
         display: grid;
-        grid-template-columns: 160px 1fr;
+        grid-template-columns: 170px 1fr;
         gap: 18px;
         padding: 16px;
         border-radius: 14px;
         border: 1px solid var(--border);
-        background: rgba(0,0,0,0.25);
+        background: rgba(255,255,255,0.65);
       }
+
       .cover-art {
-        width: 160px;
-        height: 160px;
+        width: 170px;
+        height: 170px;
         border-radius: 10px;
-        background: linear-gradient(135deg, #222, #111);
+        background: linear-gradient(135deg, #ffffff, #f0f0f0);
+        border: 1px solid rgba(0,0,0,0.08);
         display: grid;
         place-items: center;
         font-size: 11px;
         letter-spacing: 1px;
-        color: rgba(255,255,255,0.4);
+        color: rgba(0,0,0,0.35);
+        user-select: none;
       }
+
       .release-title {
-        font-weight: 700;
+        font-weight: 750;
         font-size: 16px;
+        margin-top: 2px;
       }
+
       .artist {
         font-size: 13px;
         color: var(--muted);
         margin-bottom: 10px;
       }
+
       .tracks {
         list-style: none;
         padding: 0;
         margin: 0 0 10px;
       }
+
       .tracks li {
         font-size: 14px;
-        color: rgba(255,255,255,0.85);
+        color: rgba(0,0,0,0.78);
         display: flex;
         gap: 8px;
         padding: 3px 0;
       }
+
       .tracks span {
-        color: rgba(255,255,255,0.4);
-        width: 16px;
+        color: rgba(0,0,0,0.38);
+        width: 18px;
         text-align: right;
-      }
-      .notes {
-        font-size: 12px;
-        color: rgba(255,255,255,0.5);
+        flex: 0 0 18px;
       }
 
-      .form {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        gap: 10px;
-        margin-top: 18px;
-      }
-      input[type="email"] {
-        width: 100%;
-        padding: 12px 14px;
-        border-radius: 12px;
-        border: 1px solid var(--border);
-        background: rgba(0,0,0,0.25);
-        color: var(--text);
-        font-size: 15px;
-        outline: none;
-      }
-      input[type="email"]::placeholder { color: rgba(255,255,255,0.45); }
-      button {
-        padding: 12px 14px;
-        border-radius: 12px;
-        border: 1px solid var(--border);
-        background: rgba(255,255,255,0.10);
-        color: var(--text);
-        font-weight: 600;
-        font-size: 15px;
-        cursor: pointer;
-      }
-      button:hover { background: rgba(255,255,255,0.14); }
-      .fineprint {
-        margin-top: 10px;
+      .notes {
         font-size: 12px;
-        color: rgba(255,255,255,0.55);
+        color: rgba(0,0,0,0.55);
+        letter-spacing: 0.6px;
       }
+
       .footer {
         margin-top: 18px;
         display: flex;
@@ -168,16 +160,20 @@
         gap: 12px;
         flex-wrap: wrap;
         font-size: 12px;
-        color: rgba(255,255,255,0.55);
+        color: rgba(0,0,0,0.52);
       }
-      a { color: rgba(255,255,255,0.75); text-decoration: none; }
-      a:hover { text-decoration: underline; }
+
+      a {
+        color: rgba(0,0,0,0.72);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
 
       @media (max-width: 560px) {
         .card { padding: 20px; }
-        .form { grid-template-columns: 1fr; }
-        button { width: 100%; }
-
         .mock-card { grid-template-columns: 1fr; }
         .cover-art { width: 100%; height: 220px; }
       }
@@ -192,7 +188,7 @@
           <div class="tag">Coming soon</div>
         </div>
 
-        <h1>One page to share your music.</h1>
+        <h1>Share your unreleased music.</h1>
 
         <p>
           Tired of sending zip files or awkward file-sharing links? Gatefolded gives artists one page to share a release,
@@ -206,26 +202,20 @@
             </div>
 
             <div class="meta">
-              <div class="release-title">Album Title</div>
-              <div class="artist">ARTIST NAME</div>
+              <div class="release-title">The All-Night Costume Company</div>
+              <div class="artist">Kye Alfred Hillig</div>
 
               <ul class="tracks">
-                <li><span>1.</span> Track 01</li>
-                <li><span>2.</span> Track 02</li>
-                <li><span>3.</span> Track 03</li>
-                <li><span>4.</span> Track 04</li>
+                <li><span>1.</span> Opening Track</li>
+                <li><span>2.</span> Second Song</li>
+                <li><span>3.</span> Lead Single</li>
+                <li><span>4.</span> Final Track</li>
               </ul>
 
-              <div class="notes">
-                LYRICS | CREDITS | NOTES | DOWNLOAD
-              </div>
+              <div class="notes">LYRICS | CREDITS | NOTES | DOWNLOAD</div>
             </div>
           </div>
         </div>
-
-        <!-- OPTIONAL: email capture. -->
-
-       <!--  <div class="fineprint">No spam. One email when it’s ready.</div> -->
 
         <div class="footer">
           <div>© <span id="y"></span> Gatefolded</div>
